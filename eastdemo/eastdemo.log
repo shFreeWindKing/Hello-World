@@ -1,0 +1,46 @@
+2020-12-22 14:57:23.578 5 10736 --- [main] c.s.eastdemo.EastdemoApplication         : Starting EastdemoApplication using Java 1.8.0_202 on xudongjian-1D with PID 10736 (D:\SAAS_Git\eastdemo\target\classes started by xudongjian in D:\SAAS_Git\eastdemo)
+2020-12-22 14:57:23.581 5 10736 --- [main] c.s.eastdemo.EastdemoApplication         : No active profile set, falling back to default profiles: default
+2020-12-22 14:57:24.670 5 10736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-12-22 14:57:24.676 5 10736 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-22 14:57:24.676 5 10736 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-22 14:57:24.735 5 10736 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-22 14:57:24.735 5 10736 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1118 ms
+2020-12-22 14:57:24.989 5 10736 --- [main] c.s.eastdemo.config.LogBackConfig        : ===============print log===============
+2020-12-22 14:57:25.001 5 10736 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-12-22 14:57:25.060 5 10736 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-22 14:57:25.507 5 10736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-12-22 14:57:25.508 5 10736 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-12-22 14:57:25.520 5 10736 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-12-22 14:57:25.540 5 10736 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-12-22 14:57:25.647 5 10736 --- [main] c.s.eastdemo.EastdemoApplication         : Started EastdemoApplication in 2.423 seconds (JVM running for 2.937)
+2020-12-22 15:17:53.995 5 14956 --- [main] c.s.eastdemo.EastdemoApplication         : Starting EastdemoApplication using Java 1.8.0_202 on xudongjian-1D with PID 14956 (D:\SAAS_Git\eastdemo\target\classes started by xudongjian in D:\SAAS_Git\eastdemo)
+2020-12-22 15:17:53.998 5 14956 --- [main] c.s.eastdemo.EastdemoApplication         : No active profile set, falling back to default profiles: default
+2020-12-22 15:17:55.002 5 14956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-12-22 15:17:55.011 5 14956 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-22 15:17:55.011 5 14956 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-22 15:17:55.081 5 14956 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-22 15:17:55.081 5 14956 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1034 ms
+2020-12-22 15:17:55.410 5 14956 --- [main] c.s.eastdemo.config.LogBackConfig        : ===============print log===============
+2020-12-22 15:17:55.422 5 14956 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-12-22 15:17:55.494 5 14956 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-22 15:17:55.979 5 14956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-12-22 15:17:55.981 5 14956 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-12-22 15:17:55.995 5 14956 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-12-22 15:17:56.022 5 14956 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-12-22 15:17:56.154 5 14956 --- [main] c.s.eastdemo.EastdemoApplication         : Started EastdemoApplication in 2.647 seconds (JVM running for 3.464)
+2020-12-22 15:20:31.354 5 18340 --- [main] c.s.eastdemo.EastdemoApplication         : Starting EastdemoApplication using Java 1.8.0_202 on xudongjian-1D with PID 18340 (D:\SAAS_Git\eastdemo\target\classes started by xudongjian in D:\SAAS_Git\eastdemo)
+2020-12-22 15:20:31.356 5 18340 --- [main] c.s.eastdemo.EastdemoApplication         : No active profile set, falling back to default profiles: default
+2020-12-22 15:20:32.234 5 18340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-12-22 15:20:32.240 5 18340 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-22 15:20:32.240 5 18340 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2020-12-22 15:20:32.297 5 18340 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-22 15:20:32.297 5 18340 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 903 ms
+2020-12-22 15:20:32.545 5 18340 --- [main] c.s.eastdemo.config.LogBackConfig        : ===============print log===============
+2020-12-22 15:20:32.546 5 18340 --- [main] c.s.eastdemo.config.LogBackConfig        : =============test logback debug=============
+2020-12-22 15:20:32.556 5 18340 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-12-22 15:20:32.614 5 18340 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-22 15:20:33.071 5 18340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-12-22 15:20:33.072 5 18340 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-12-22 15:20:33.082 5 18340 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-12-22 15:20:33.101 5 18340 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-12-22 15:20:33.211 5 18340 --- [main] c.s.eastdemo.EastdemoApplication         : Started EastdemoApplication in 2.312 seconds (JVM running for 2.83)
