@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shptchangfeng.eastdemo.dao.DicStaffMapper">
+
+    <resultMap id="BaseResultMap" type="com.shptchangfeng.eastdemo.po.DicStaff" >
+        <result column="id" property="id" />
+        <result column="uuid" property="uuid" />
+        <result column="bill_no" property="billNo" />
+        <result column="name" property="name" />
+        <result column="age" property="age" />
+        <result column="create_time" property="createTime" />
+        <result column="edit_time" property="editTime" />
+        <result column="delete_flag" property="deleteFlag" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+                id,
+                uuid,
+                bill_no,
+                name,
+                age,
+                create_time,
+                edit_time,
+                delete_flag
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.shptchangfeng.eastdemo.po.DicStaff">
+        INSERT INTO dic_staff
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test ='null != uuid'>
+                uuid,
+            </if>
+            <if test ='null != billNo'>
+                bill_no,
+            </if>
+            <if test ='null != name'>
+                name,
+            </if>
+            <if test ='null != age'>
+                age,
+            </if>
+            <if test ='null != createTime'>
+                create_time,
+            </if>
+            <if test ='null != editTime'>
+                edit_time,
+            </if>
+            <if test ='null != deleteFlag'>
+                delete_flag
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test ='null != uuid'>
+                #{uuid},
+            </if>
+            <if test ='null != billNo'>
+                #{billNo},
+            </if>
+            <if test ='null != name'>
+                #{name},
+            </if>
+            <if test ='null != age'>
+                #{age},
+            </if>
+            <if test ='null != createTime'>
+                #{createTime},
+            </if>
+            <if test ='null != editTime'>
+                #{editTime},
+            </if>
+            <if test ='null != deleteFlag'>
+                #{deleteFlag}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM dic_staff
+        WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.shptchangfeng.eastdemo.po.DicStaff">
+        UPDATE dic_staff
+        <set>
+            <if test ='null != uuid'>uuid = #{uuid},</if>
+            <if test ='null != billNo'>bill_no = #{billNo},</if>
+            <if test ='null != name'>name = #{name},</if>
+            <if test ='null != age'>age = #{age},</if>
+            <if test ='null != createTime'>create_time = #{createTime},</if>
+            <if test ='null != editTime'>edit_time = #{editTime},</if>
+            <if test ='null != deleteFlag'>delete_flag = #{deleteFlag}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+    <select id="load" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM dic_staff
+        WHERE id = #{id} and deleteFlag=0
+    </select>
+
+    <select id="pageList" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM dic_staff
+        WHERE  deleteFlag=0
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="pageListCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM dic_staff
+        WHERE  deleteFlag=0
+    </select>
+
+</mapper>

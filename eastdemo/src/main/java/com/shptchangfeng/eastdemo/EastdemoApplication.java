@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
+import tk.mybatis.spring.annotation.MapperScan;
 
 import java.util.List;
 import java.util.Map;
@@ -15,9 +16,9 @@ import java.util.Map;
  * 如果需要用到数据库请将exclude去掉
  */
 @SpringBootApplication
+@MapperScan(basePackages = {"com.shptchangfeng.eastdemo.dao"})
 //@SpringBootApplication(exclude={HibernateJpaAutoConfiguration.class})
 public class EastdemoApplication {
-
     public static void main(String[] args) {
 //        ConfigurableApplicationContext context = SpringApplication.run(EastdemoApplication.class, args);
 //        JdbcTemplate jdbcTemplate = context.getBean(JdbcTemplate.class);
