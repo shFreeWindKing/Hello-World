@@ -1,7 +1,10 @@
 package com.shptchangfeng.eastdemo.service;
 
+import com.shptchangfeng.eastdemo.dto.DicStaffDTO;
 import com.shptchangfeng.eastdemo.po.DicStaff;
 import com.shptchangfeng.eastdemo.model.Result;
+
+import java.util.List;
 import java.util.Map;
 
 
@@ -22,10 +25,16 @@ public interface DicStaffService {
 //     */
 //    public Result<Boolean> delete(int id);
 //
-//    /**
-//     * 更新
-//     */
-//    public Result<Boolean> update(DicStaff dicStaff);
+
+    /**
+     * 更新
+     */
+    public Result<Boolean> update(DicStaff dicStaff);
+
+    /**
+     * 保存
+     */
+    public Result<Boolean> save(DicStaff dicStaff);
 
 //    /**
 //     * 根据主键 id 查询
@@ -38,5 +47,7 @@ public interface DicStaffService {
     public Map<String,Object> pageList(int offset, int pagesize);
 
 
-    public DicStaff getUserInfo(Long id);
+    public DicStaffDTO getUserInfo(Long id);
+
+    public List<DicStaffDTO> getUserInfoByName(String name);
 }

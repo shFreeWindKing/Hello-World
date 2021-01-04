@@ -75,7 +75,7 @@
         </trim>
     </insert>
 
-    <delete id="delete" >
+    <delete id="deleteCopy" >
         DELETE FROM dic_staff
         WHERE id = #{id}
     </delete>
@@ -98,7 +98,7 @@
     <select id="load" resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List" />
         FROM dic_staff
-        WHERE id = #{id} and deleteFlag=0
+        WHERE id = #{id} and delete_Flag=0
     </select>
 
     <select id="pageList" resultMap="BaseResultMap">

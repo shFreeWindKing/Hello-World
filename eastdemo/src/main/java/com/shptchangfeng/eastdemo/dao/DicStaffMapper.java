@@ -4,6 +4,7 @@ import com.shptchangfeng.eastdemo.po.DicStaff;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+import tk.mybatis.mapper.common.MySqlMapper;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  */
 @Mapper
 @Repository
-public interface DicStaffMapper extends tk.mybatis.mapper.common.Mapper<DicStaff> {
+public interface DicStaffMapper extends tk.mybatis.mapper.common.Mapper<DicStaff>, MySqlMapper<DicStaff> {
     /**
      * [新增]
      * @author xudongjian
@@ -26,7 +27,7 @@ public interface DicStaffMapper extends tk.mybatis.mapper.common.Mapper<DicStaff
      * @author xudongjian
      * @date 2020/12/28
      **/
-    int delete(int id);
+    int deleteCopy(long id);
 
     /**
      * [更新]
@@ -40,7 +41,7 @@ public interface DicStaffMapper extends tk.mybatis.mapper.common.Mapper<DicStaff
      * @author xudongjian
      * @date 2020/12/28
      **/
-    DicStaff load(int id);
+    DicStaff load(long id);
 
     /**
      * [查询] 分页查询

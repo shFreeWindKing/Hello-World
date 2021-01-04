@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/hello")
 /* 类注解 */
-@Api(value = "desc of Hello Controller")
+@Api(value = "Demo of Hello Controller", tags = {"Demo of Hello Controller"})
 public class HelloController {
     /* 方法注解 */
     @ApiOperation(value = "desc of say", notes = "sayHello")
