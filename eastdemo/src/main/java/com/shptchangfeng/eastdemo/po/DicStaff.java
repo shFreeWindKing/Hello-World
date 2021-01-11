@@ -4,6 +4,7 @@ import java.io.Serializable;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Table;
 
 /**
@@ -20,12 +21,14 @@ public class DicStaff extends BaseBill implements Serializable {
      * name
      */
     @ApiModelProperty(value="姓名")
+    @Column(columnDefinition = "VARCHAR")
     private String name;
 
     /**
      * age
      */
     @ApiModelProperty(value="年龄")
+    @Column(columnDefinition = "INTEGER")
     private int age;
 
     public DicStaff() {

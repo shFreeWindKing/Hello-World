@@ -18,7 +18,7 @@ public interface DicStaffService {
     /**
      * 新增
      */
-    public Result<Boolean> insert(DicStaff dicStaff);
+    public Result<Boolean> insert(DicStaffDTO dicStaff);
 //
 //    /**
 //     * 删除
@@ -29,17 +29,17 @@ public interface DicStaffService {
     /**
      * 更新
      */
-    public Result<Boolean> update(DicStaff dicStaff);
+    public Result<Boolean> update(DicStaffDTO dicStaff);
 
     /**
      * 保存
      */
-    public Result<Boolean> save(DicStaff dicStaff);
+    public Result<Boolean> save(DicStaffDTO dicStaff);
 
 //    /**
 //     * 根据主键 id 查询
 //     */
-//    public DicStaff load(int id);
+//    public DicStaffDTO load(int id);
 
     /**
      * 分页查询

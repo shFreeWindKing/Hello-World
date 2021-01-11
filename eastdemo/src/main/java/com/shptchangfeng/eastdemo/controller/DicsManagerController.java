@@ -37,7 +37,7 @@ public class DicsManagerController {
         } else {
             dicStaff = this.convertor.convertor(dicStaffReqVO, DicStaff.class);
         }
-        Result<Boolean> result = dicStaffService.insert(dicStaff);
+        Result<Boolean> result = dicStaffService.save(dicStaff);
         return result;
     }
 }

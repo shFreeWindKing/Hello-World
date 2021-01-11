@@ -39,7 +39,7 @@ public class DateUtil {
     /**
      * 数据库默认时间
      */
-    public final static String DEFAULT_TIME="1000-01-01 00:00:00";
+    public final static String DEFAULT_TIME="2999-12-31 00:00:00";
 
     /**
      * 将指定的时间日期类转为指定格式的String
@@ -192,6 +192,13 @@ public class DateUtil {
      */
     public static Date getDefaultDate(){
         return strToDate(DEFAULT_TIME, TIMEFORMAT);
+    }
+
+    public static Date getNow() {
+        SimpleDateFormat df = new SimpleDateFormat(TIMEFORMAT);//设置日期格式
+        Date today = new Date();
+        String snow = df.format(today);
+        return strToDate(snow, TIMEFORMAT);
     }
 
     public static Date strToDate(String dateStr, String formatType) {

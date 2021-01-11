@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shptchangfeng.eastdemo.dao.SysSerialNumberMapper">
+
+    <resultMap id="BaseResultMap" type="com.shptchangfeng.eastdemo.po.SysSerialNumber" >
+        <result column="id" property="id" />
+        <result column="module_name" property="moduleName" />
+        <result column="module_code" property="moduleCode" />
+        <result column="config_templet" property="configTemplet" />
+        <result column="max_serial" property="maxSerial" />
+        <result column="pre_max_num" property="preMaxNum" />
+        <result column="is_auto_increment" property="isAutoIncrement" />
+        <result column="create_time" property="createTime" />
+        <result column="edit_time" property="editTime" />
+        <result column="delete_flag" property="deleteFlag" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+                id,
+                module_name,
+                module_code,
+                config_templet,
+                max_serial,
+                pre_max_num,
+                is_auto_increment,
+                create_time,
+                edit_time,
+                delete_flag
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.shptchangfeng.eastdemo.po.SysSerialNumber">
+        INSERT INTO sys_serial_number
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test ='null != moduleName'>
+                module_name,
+            </if>
+            <if test ='null != moduleCode'>
+                module_code,
+            </if>
+            <if test ='null != configTemplet'>
+                config_templet,
+            </if>
+            <if test ='null != maxSerial'>
+                max_serial,
+            </if>
+            <if test ='null != preMaxNum'>
+                pre_max_num,
+            </if>
+            <if test ='null != isAutoIncrement'>
+                is_auto_increment,
+            </if>
+            <if test ='null != createTime'>
+                create_time,
+            </if>
+            <if test ='null != editTime'>
+                edit_time,
+            </if>
+            <if test ='null != deleteFlag'>
+                delete_flag
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test ='null != moduleName'>
+                #{moduleName},
+            </if>
+            <if test ='null != moduleCode'>
+                #{moduleCode},
+            </if>
+            <if test ='null != configTemplet'>
+                #{configTemplet},
+            </if>
+            <if test ='null != maxSerial'>
+                #{maxSerial},
+            </if>
+            <if test ='null != preMaxNum'>
+                #{preMaxNum},
+            </if>
+            <if test ='null != isAutoIncrement'>
+                #{isAutoIncrement},
+            </if>
+            <if test ='null != createTime'>
+                #{createTime},
+            </if>
+            <if test ='null != editTime'>
+                #{editTime},
+            </if>
+            <if test ='null != deleteFlag'>
+                #{deleteFlag}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM sys_serial_number
+        WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.shptchangfeng.eastdemo.po.SysSerialNumber">
+        UPDATE sys_serial_number
+        <set>
+            <if test ='null != moduleName'>module_name = #{moduleName},</if>
+            <if test ='null != moduleCode'>module_code = #{moduleCode},</if>
+            <if test ='null != configTemplet'>config_templet = #{configTemplet},</if>
+            <if test ='null != maxSerial'>max_serial = #{maxSerial},</if>
+            <if test ='null != preMaxNum'>pre_max_num = #{preMaxNum},</if>
+            <if test ='null != isAutoIncrement'>is_auto_increment = #{isAutoIncrement},</if>
+            <if test ='null != createTime'>create_time = #{createTime},</if>
+            <if test ='null != editTime'>edit_time = #{editTime},</if>
+            <if test ='null != deleteFlag'>delete_flag = #{deleteFlag}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+    <select id="load" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM sys_serial_number
+        WHERE id = #{id} and delete_flag=0
+    </select>
+
+    <select id="pageList" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM sys_serial_number
+        WHERE  delete_flag=0
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="pageListCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM sys_serial_number
+        WHERE  delete_flag=0
+    </select>
+
+</mapper>

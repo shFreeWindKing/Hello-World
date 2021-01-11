@@ -1,5 +1,6 @@
 package com.shptchangfeng.eastdemo.config.datasource;
 
+import com.alibaba.druid.filter.logging.Log4j2Filter;
 import com.alibaba.druid.pool.DruidDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -24,6 +25,9 @@ public class MysqlDruidDataSourceConfig {
     private static final String MAPPER_XML_PATH = "classpath:/mysql-mapper/*.xml";
     //数据源配置的前缀，必须与application.properties中配置的对应数据源的前缀一致
     private static final String DATASOURCE_PREFIX = "spring.datasource";
+    //druid的log Filter配置
+    private static final String LOFFILTER_PREFIX = "druid";
+    private static final String  SLF4JLOGFILTER = "my-log-filter";
 
     @Primary
     @Bean(name = DATASOURCE_NAME)
@@ -46,5 +50,13 @@ public class MysqlDruidDataSourceConfig {
             log.error("配置demo的SqlSessionFactory失败，error:{}", e.getMessage());
             throw new RuntimeException(e.getMessage());
         }
+    }
+
+    @Primary
+    @Bean(name = SLF4JLOGFILTER)
+    @ConfigurationProperties(prefix = LOFFILTER_PREFIX)
+    public Log4j2Filter mysqllogFilter() {
+        Log4j2Filter slf4jLogFilter = new Log4j2Filter();
+        return slf4jLogFilter;
     }
 }

@@ -8,7 +8,6 @@ import com.shptchangfeng.eastdemo.dto.DicStaffDTO;
 import com.shptchangfeng.eastdemo.model.Result;
 import com.shptchangfeng.eastdemo.po.DicStaff;
 import com.shptchangfeng.eastdemo.service.DicStaffService;
-import com.shptchangfeng.eastdemo.vo.response.DicStaffRespVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,18 +31,19 @@ public class DicStaffServiceImpl implements DicStaffService {
     private ConvertorUtil convertor;
 
     @Override
-    public Result<Boolean> insert(DicStaff dicStaff) {
+    public Result<Boolean> insert(DicStaffDTO dicStaffDTO) {
         // valid
-        if (dicStaff == null) {
+        if (dicStaffDTO == null) {
             return Result.error("必要参数缺失");
         }
+        DicStaff dicStaff = this.convertor.convertor(dicStaffDTO, DicStaff.class);
         // 删除标识必须设置为0
         dicStaff.setDeleteFlag(0);
         if (null == dicStaff.getCreateTime()) {
-            dicStaff.setCreateTime(DateUtil.getDefaultDate());
+            dicStaff.setCreateTime(DateUtil.getNow());
         }
         if (null == dicStaff.getEditTime()) {
-            dicStaff.setEditTime(DateUtil.getDefaultDate());
+            dicStaff.setEditTime(DateUtil.getNow());
         }
         if (null == dicStaff.getUuid() || dicStaff.getUuid().isEmpty()) {
             String uuid = GeneratorUtil.getRandomUUID();
@@ -56,26 +56,26 @@ public class DicStaffServiceImpl implements DicStaffService {
     /**
      * 更新
      *
-     * @param dicStaff
+     * @param dicStaffDTO
      */
     @Override
-    public Result<Boolean> update(DicStaff dicStaff) {
+    public Result<Boolean> update(DicStaffDTO dicStaffDTO) {
         // valid
-        if (dicStaff == null) {
+        if (dicStaffDTO == null) {
             return Result.error("必要参数缺失");
         }
-
+        DicStaff dicStaff = this.convertor.convertor(dicStaffDTO, DicStaff.class);
         dicStaffMapper.update(dicStaff);
         return Result.success();
     }
 
     @Override
-    public Result<Boolean> save(DicStaff dicStaff) {
-        long id = dicStaff.getId();
+    public Result<Boolean> save(DicStaffDTO dicStaffDTO) {
+        long id = dicStaffDTO.getId();
         if (id <= 0) {
-            return insert(dicStaff);
+            return insert(dicStaffDTO);
         } else {
-            return update(dicStaff);
+            return update(dicStaffDTO);
         }
     }
 
@@ -115,7 +115,7 @@ public class DicStaffServiceImpl implements DicStaffService {
         if (name.equalsIgnoreCase("?") || name.equalsIgnoreCase("*")) {
             //全量查找
         } else {
-            criteria.andLike("name", name);
+            criteria.andLike("name", "%".concat(name).concat("%"));
         }
         List<DicStaff> dicStaffList = dicStaffMapper.selectByExample(example);
 

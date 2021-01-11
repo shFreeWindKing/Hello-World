@@ -6,7 +6,8 @@ spring:
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.jdbc.Driver
+    #old driver class com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     #  数据源其他配置
     initialSize: 5
     minIdle: 5
@@ -26,3 +27,15 @@ mybatis:
   mapper-locations:
     classpath: mysql-mapper/*.xml
   type-aliases-package: com.shptchangfeng.eastdemo.dao
+
+# druid
+druid:
+  # 所有连接相关的日志
+  connectionLogEnabled: false
+  # 所有Statement相关的日志
+  statementLogEnabled: false
+  # 是否显示结果集
+  resultSetLogEnabled: false
+  # 是否显示SQL语句
+  statementExecutableSqlLogEnable: true
+
