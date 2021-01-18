@@ -44,11 +44,11 @@ public class SysSerialNumberServiceImpl implements SysSerialNumberService {
     }
 
 
-    @Override
-    public Result<String> delete(long id) {
-        int ret = sysSerialNumberMapper.delete(id);
-        return ret>0 ? Result.success() : Result.error("不存在id:" + id);
-    }
+//    @Override
+//    public Result<String> delete(long id) {
+//        int ret = sysSerialNumberMapper.delete(id);
+//        return ret>0 ? Result.success() : Result.error("不存在id:" + id);
+//    }
 
 
     @Override

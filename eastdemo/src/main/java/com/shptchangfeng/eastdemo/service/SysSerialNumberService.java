@@ -17,10 +17,10 @@ public interface SysSerialNumberService {
      */
     public Result<String> insert(SysSerialNumberDTO sysSerialNumber);
 
-    /**
-     * 删除
-     */
-    public Result<String> delete(long id);
+//    /**
+//     * 删除
+//     */
+//    public Result<String> delete(long id);
 
     /**
      * 更新

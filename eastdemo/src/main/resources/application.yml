@@ -1,41 +1,26 @@
-server:
-  port: 8081
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/db_eastdemo?characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=UTC
-    username: root
-    password: root
-    type: com.alibaba.druid.pool.DruidDataSource
-    #old driver class com.mysql.jdbc.Driver
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    #  æ•°æ®æºå…¶ä»–é…ç½®
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validaionQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-# mybatis
-mybatis:
-  config-locations:
-    classpath: mybatis/mybatis-config.xml
-  mapper-locations:
-    classpath: mysql-mapper/*.xml
-  type-aliases-package: com.shptchangfeng.eastdemo.dao
-
-# druid
-druid:
-  # æ‰€æœ‰è¿æ¥ç›¸å…³çš„æ—¥å¿—
-  connectionLogEnabled: false
-  # æ‰€æœ‰Statementç›¸å…³çš„æ—¥å¿—
-  statementLogEnabled: false
-  # æ˜¯å¦æ˜¾ç¤ºç»“æœé›†
-  resultSetLogEnabled: false
-  # æ˜¯å¦æ˜¾ç¤ºSQLè¯­å¥
-  statementExecutableSqlLogEnable: true
-
+  application:
+    #ÏîÄ¿Ãû³Æ£º
+    name: eastdemo-service
+#server:
+#  port: 8081
+apollo:
+  #¿ª·¢»·¾³ÅäÖÃÖĞĞÄ
+  meta: http://10.32.44.48:8080
+  #   cacheDir: /opt/data/apollo-config
+  #   cluster: default
+  bootstrap:
+    #×¢Èë·ÇÄ¬ÈÏapplication namespace»ò¶à¸önamespaceµÄÅäÖÃÊ¾Àı
+    enabled: true
+    #½«ApolloÅäÖÃ¼ÓÔØÌáµ½³õÊ¼»¯ÈÕÖ¾ÏµÍ³Ö®Ç°
+    eagerLoad:
+      enabled: true
+    #ÅäÖÃÖĞĞÄÅäÖÃÎÄ¼ş±ğÃû(×¢£º¸ù¾İÏîÄ¿ĞèÒªÒÀÀµ¼´¿É)
+    namespaces: demo.eastdemo,application-yml
+eureka:
+   client:
+      registry-fetch-interval-seconds: 5
+      fetch-registry: true
+      register-with-eureka: true
+      service-url:
+        defaultZone: http://127.0.0.1:8080/eureka/

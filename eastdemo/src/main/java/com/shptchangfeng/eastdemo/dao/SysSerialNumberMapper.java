@@ -18,12 +18,12 @@ public interface SysSerialNumberMapper  extends tk.mybatis.mapper.common.Mapper<
      **/
     int insert(SysSerialNumber sysSerialNumber);
 
-    /**
-     * [刪除]
-     * @author xudongjian
-     * @date 2020/12/28
-     **/
-    int delete(long id);
+//    /**
+//     * [刪除]
+//     * @author xudongjian
+//     * @date 2020/12/28
+//     **/
+//    int delete(long id);
 
     /**
      * [更新]

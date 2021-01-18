@@ -1,0 +1,24 @@
+#spring:
+#   application:
+#      #项目名称：
+#      name: eastdemo-service-xdj
+#server:
+#   port: 8081
+#apollo:
+#   #开发环境配置中心
+##   meta: http://10.246.160.58:8080
+##   cacheDir: /opt/data/apollo-config
+##   cluster: default
+#   bootstrap:
+#      #注入非默认application namespace或多个namespace的配置示例
+#      enabled: true
+#      #将Apollo配置加载提到初始化日志系统之前
+#      eagerLoad:
+#         enabled: true
+#      #配置中心配置文件别名(注：根据项目需要依赖即可)
+#      namespaces: demo.eastdemo,application-yml
+#eureka:
+#   client:
+#      registry-fetch-interval-seconds: 5
+#      serviceUrl:
+#         defaultZone: http://127.0.0.1:8080/
