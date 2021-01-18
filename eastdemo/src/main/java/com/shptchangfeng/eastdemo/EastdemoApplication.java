@@ -33,7 +33,7 @@ public class EastdemoApplication {
 //            System.out.println(map);
 //        }
 //        //设置apollo启动环境 暂时固定
-        System.setProperty("env", "DEV");
+//        System.setProperty("env", "DEV");
         SpringApplication.run(EastdemoApplication.class, args);
     }
 

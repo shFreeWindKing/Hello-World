@@ -1,26 +1,27 @@
 spring:
   application:
-    #ÏîÄ¿Ãû³Æ£º
+    #é¡¹ç›®åç§°ï¼š
     name: eastdemo-service
 #server:
 #  port: 8081
 apollo:
-  #¿ª·¢»·¾³ÅäÖÃÖĞĞÄ
+  id: eastdemo
+  #å¼€å‘ç¯å¢ƒé…ç½®ä¸­å¿ƒ
   meta: http://10.32.44.48:8080
   #   cacheDir: /opt/data/apollo-config
   #   cluster: default
   bootstrap:
-    #×¢Èë·ÇÄ¬ÈÏapplication namespace»ò¶à¸önamespaceµÄÅäÖÃÊ¾Àı
+    #æ³¨å…¥éé»˜è®¤application namespaceæˆ–å¤šä¸ªnamespaceçš„é…ç½®ç¤ºä¾‹
     enabled: true
-    #½«ApolloÅäÖÃ¼ÓÔØÌáµ½³õÊ¼»¯ÈÕÖ¾ÏµÍ³Ö®Ç°
+    #å°†Apolloé…ç½®åŠ è½½æåˆ°åˆå§‹åŒ–æ—¥å¿—ç³»ç»Ÿä¹‹å‰
     eagerLoad:
       enabled: true
-    #ÅäÖÃÖĞĞÄÅäÖÃÎÄ¼ş±ğÃû(×¢£º¸ù¾İÏîÄ¿ĞèÒªÒÀÀµ¼´¿É)
+    #é…ç½®ä¸­å¿ƒé…ç½®æ–‡ä»¶åˆ«å(æ³¨ï¼šæ ¹æ®é¡¹ç›®éœ€è¦ä¾èµ–å³å¯)
     namespaces: demo.eastdemo,application-yml
 eureka:
-   client:
-      registry-fetch-interval-seconds: 5
-      fetch-registry: true
-      register-with-eureka: true
-      service-url:
-        defaultZone: http://127.0.0.1:8080/eureka/
+  client:
+    registry-fetch-interval-seconds: 5
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka/
