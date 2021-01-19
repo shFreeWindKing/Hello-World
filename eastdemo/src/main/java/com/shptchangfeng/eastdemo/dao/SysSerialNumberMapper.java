@@ -8,7 +8,6 @@ import tk.mybatis.mapper.common.MySqlMapper;
 
 import java.util.List;
 
-@Mapper
 @Repository
 public interface SysSerialNumberMapper  extends tk.mybatis.mapper.common.Mapper<SysSerialNumber>, MySqlMapper<SysSerialNumber> {
     /**

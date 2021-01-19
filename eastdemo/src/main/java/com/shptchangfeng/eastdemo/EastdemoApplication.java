@@ -20,9 +20,10 @@ import java.util.Map;
  */
 @EnableApolloConfig
 //@EnableEurekaClient 从Spring Cloud Edgware开始，@EnableEurekaClient 或 @EnableDiscoveryClient 是可省略的。只需加上相关依赖
-@Configuration
+//@Configuration
 @SpringBootApplication
-@MapperScan(basePackages = {"com.shptchangfeng.eastdemo.dao"})
+//WARN Skipping MapperFactoryBean with name mapperInterface. Bean already defined with the same name!
+//@MapperScan(basePackages = {"com.shptchangfeng.eastdemo.dao"})
 //@SpringBootApplication(exclude={HibernateJpaAutoConfiguration.class})
 public class EastdemoApplication {
     public static void main(String[] args) {

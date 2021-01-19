@@ -29,7 +29,7 @@ public class DicStaff extends BaseBill implements Serializable {
      */
     @ApiModelProperty(value="年龄")
     @Column(columnDefinition = "INTEGER")
-    private int age;
+    private Integer age;
 
     public DicStaff() {
     }

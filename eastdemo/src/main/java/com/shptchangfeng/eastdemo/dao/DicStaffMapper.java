@@ -12,7 +12,6 @@ import java.util.List;
  * 接入 tk-mybatis
  *
  */
-@Mapper
 @Repository
 public interface DicStaffMapper extends tk.mybatis.mapper.common.Mapper<DicStaff>, MySqlMapper<DicStaff> {
     /**
